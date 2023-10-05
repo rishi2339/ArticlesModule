@@ -1,8 +1,18 @@
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+        mavenLocal()
+    }
 
+    dependencies {
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.0")
+    }
+}
 plugins {
+    id("maven-publish")
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
-    id("maven-publish")
 }
 
 android {
@@ -13,7 +23,7 @@ android {
         minSdk = 26
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        consumerProguardFiles("consumer-rules.pro")
+
     }
 
     buildTypes {
@@ -25,18 +35,13 @@ android {
             )
         }
     }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
-    }
+
     kotlinOptions {
         jvmTarget = "1.8"
     }
     buildFeatures{
         viewBinding=true
-    }
-    dataBinding{
-        enable= true
+        dataBinding=true
     }
 }
 
@@ -53,4 +58,16 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.6.1")
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1")
 }
+publishing {
+    publications {
+        register<MavenPublication>("release") {
+            groupId = "com.github.rishi2339"
+            artifactId = "ArticlesModule"
+            version = "1.0.6"
 
+            afterEvaluate {
+                from(components["release"])
+            }
+        }
+    }
+}

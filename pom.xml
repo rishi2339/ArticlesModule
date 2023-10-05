@@ -4,8 +4,8 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.github.rishi2339</groupId> <!-- com.github.geek-atif-->
-    <artifactId>com-articleModule</artifactId> <!-- com-atifqamar-customtoast -->
-    <version>1.0.5</version> <!-- 1.0 -->
+    <artifactId>ArticlesModule</artifactId> <!-- com-atifqamar-customtoast -->
+    <version>1.0.6</version> <!-- 1.0 -->
     <packaging>pom</packaging>
     <description>First version release</description>
 </project>
