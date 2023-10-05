@@ -1,6 +1,8 @@
+
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
+    id("maven-publish")
 }
 
 android {
@@ -34,9 +36,10 @@ android {
         viewBinding=true
     }
     dataBinding{
-        enable = true
+        enable= true
     }
 }
+
 
 dependencies {
 
@@ -50,3 +53,4 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.6.1")
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1")
 }
+
