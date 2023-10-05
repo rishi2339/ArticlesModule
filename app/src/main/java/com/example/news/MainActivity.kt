@@ -8,6 +8,7 @@ import android.widget.Button
 import android.widget.Toast
 import com.example.newslib.MainActivity2
 
+
 class MainActivity : AppCompatActivity() {
     private val TARGET_ACTIVITY_REQUEST_CODE = 1
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -15,8 +16,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
        findViewById<Button>(R.id.button).setOnClickListener {
            val intent = Intent(this@MainActivity, MainActivity2::class.java)
-
-           // Start the TargetActivity and expect a result
            startActivityForResult(intent, TARGET_ACTIVITY_REQUEST_CODE)
        }
     }
@@ -25,8 +24,6 @@ class MainActivity : AppCompatActivity() {
 
         if (requestCode == TARGET_ACTIVITY_REQUEST_CODE) {
             if (resultCode == Activity.RESULT_OK) {
-                // The target activity has finished successfully
-                // You can perform any necessary actions here
                 Toast.makeText(this,"Welcome back!",Toast.LENGTH_SHORT).show()
             }
         }
