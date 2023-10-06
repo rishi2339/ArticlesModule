@@ -1,6 +1,7 @@
 package com.example.news
 
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -15,8 +16,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
        findViewById<Button>(R.id.button).setOnClickListener {
-           val intent = Intent(this@MainActivity, MainActivity2::class.java)
-           startActivityForResult(intent, TARGET_ACTIVITY_REQUEST_CODE)
+           startActivityForResult(MainActivity2.getInstance(this),TARGET_ACTIVITY_REQUEST_CODE)
        }
     }
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

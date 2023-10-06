@@ -6,6 +6,8 @@ import MainRepository
 import ModuleApi
 import MyResponse
 import android.app.Activity
+import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -57,6 +59,7 @@ class MainActivity2 : AppCompatActivity() {
             finish()
         }
     }
-
-
+    companion object {
+        fun getInstance(context: Context) = Intent(context,MainActivity2::class.java)
+    }
 }
